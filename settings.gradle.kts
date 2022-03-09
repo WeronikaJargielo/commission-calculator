@@ -1,0 +1,1 @@
+rootProject.name = "weronikajargielo.io.commision-calculator"
