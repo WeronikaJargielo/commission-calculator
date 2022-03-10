@@ -1,6 +1,6 @@
 package weronikajargielo.io
 
-import com.example.plugins.configureSerialization
+import weronikajargielo.io.plugins.configureSerialization
 import io.ktor.application.*
 import io.ktor.features.*
 import io.ktor.server.engine.*
