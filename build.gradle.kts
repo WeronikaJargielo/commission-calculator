@@ -29,12 +29,9 @@ dependencies {
     implementation("io.ktor:ktor-auth:$ktorVersion")
     implementation("io.ktor:ktor-server-netty:$ktorVersion")
     implementation("ch.qos.logback:logback-classic:$logbackVersion")
-//    implementation("io.insert-koin:koin-core:$koinVersion")
     implementation("org.litote.kmongo:kmongo:4.2.8")
     implementation("io.insert-koin:koin-ktor:$koinVersion")
     implementation("io.insert-koin:koin-logger-slf4j:$koinVersion")
-
-//    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonVersion")
     implementation("com.opencsv:opencsv:5.2")
 
 
