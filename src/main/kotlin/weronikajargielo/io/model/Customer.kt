@@ -1,4 +1,4 @@
-package weronikajargielo.io.customer
+package weronikajargielo.io.model
 
 import java.math.BigDecimal
 import java.util.*
@@ -21,5 +21,5 @@ data class Customer(val id: Int,
 
     fun getTransactionsCount(): Int = transactions.size
     fun getLastTransactionDate(): Date = lastTransactionDate
-    fun getTotalTransactionAmunt(): BigDecimal = totalTransactionsAmount
+    fun getTotalTransactionAmount(): BigDecimal = totalTransactionsAmount
 }

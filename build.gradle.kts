@@ -1,4 +1,5 @@
 val ktorVersion: String by project
+val koinVersion: String by project
 val kotlinVersion: String by project
 val logbackVersion: String by project
 val jacksonVersion: String by project
@@ -20,16 +21,25 @@ repositories {
 }
 
 dependencies {
-    implementation("io.ktor:ktor-server-content-negotiation-jvm:$ktorVersion")
-    implementation("io.ktor:ktor-server-core-jvm:$ktorVersion")
-    implementation("io.ktor:ktor-serialization-jackson-jvm:$ktorVersion")
-    implementation("io.ktor:ktor-server-sessions-jvm:$ktorVersion")
-    implementation("io.ktor:ktor-server-auth-jvm:$ktorVersion")
-    implementation("io.ktor:ktor-server-netty-jvm:$ktorVersion")
+    implementation("io.ktor:ktor-serialization:$ktorVersion")
+    implementation("io.ktor:ktor-server-core:$ktorVersion")
+    implementation("io.ktor:ktor-gson:$ktorVersion")
+    implementation("io.ktor:ktor-jackson:$ktorVersion")
+    implementation("io.ktor:ktor-server-sessions:$ktorVersion")
+    implementation("io.ktor:ktor-auth:$ktorVersion")
+    implementation("io.ktor:ktor-server-netty:$ktorVersion")
     implementation("ch.qos.logback:logback-classic:$logbackVersion")
-    implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-csv:$jacksonVersion")
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonVersion")
+//    implementation("io.insert-koin:koin-core:$koinVersion")
+    implementation("org.litote.kmongo:kmongo:4.2.8")
+    implementation("io.insert-koin:koin-ktor:$koinVersion")
+    implementation("io.insert-koin:koin-logger-slf4j:$koinVersion")
 
-    testImplementation("io.ktor:ktor-server-tests-jvm:$ktorVersion")
+//    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonVersion")
+    implementation("com.opencsv:opencsv:5.2")
+
+
+    testImplementation("io.ktor:ktor-server-tests:$ktorVersion")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion")
+    testImplementation("io.insert-koin:koin-test:$koinVersion")
+
 }

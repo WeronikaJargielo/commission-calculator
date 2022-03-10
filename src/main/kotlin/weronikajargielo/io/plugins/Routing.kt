@@ -1,16 +1,18 @@
 package weronikajargielo.io.plugins
 
-import io.ktor.server.routing.*
-import io.ktor.http.*
-import io.ktor.server.application.*
-import io.ktor.server.response.*
-import io.ktor.server.request.*
+import io.ktor.routing.*
+import io.ktor.application.*
+import io.ktor.response.*
+import weronikajargielo.io.domain.CustomerService
 
 fun Application.configureRouting() {
 
     routing {
+        val customerService: CustomerService = CustomerService()
+
         get("/") {
-            call.respondText("Hello World!")
+            val ids: String  = call.request.queryParameters["id"] ?: "ALL"
+            call.respond(customerService.parseUserRequest(ids))
         }
     }
 }
